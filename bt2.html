@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: rgb(121, 121, 189);
+        }
+        h1 {
+            color: white;
+            text-align: center;
+        }
+        #demo {
+            text-align: center;
+            font-size: x-large;
+            font-weight: 200;
+            color: aliceblue;
+        }
+        #counttime{
+            text-align:center;
+            color: rgb(216, 210, 47);
+
+        }
+        #chicken:hover{
+            background-color: greenyellow;
+        }
+        #chicken {
+            display: inline-block;
+        }
+    
+    </style>
+</head>
+<body>
+    <h1>Thời gian bây giờ là: </h1>
+    <p id="demo"></p>
+    <div id="counttime">
+    <h2>Coundown Time</h2>
+    <p>Wait 10 seconds for the susprised things:</p>
+    <p id="chicken"></p>
+    <p id="count"></p>
+    </div>
+
+    <script>
+        setInterval(myTimer, 1000);
+        function myTimer() {
+        const date = new Date();
+        document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+        }
+        
+        const myTimeout = setTimeout(myChicken, 10000);
+        function myChicken() {
+        document.getElementById("chicken").innerHTML = '<img src="./a41d64bf3abcca049f9278a68ff12719.gif" alt="" id="chicken" width="150" height="150">'
+        }
+
+        let count=0;
+        let Chicken=document.getElementById('chicken');
+
+        Chicken.addEventListener('click', function(){
+            count=count+10;
+            document.getElementById('count').innerHTML=count;
+        })
+       
+    </script>
+</body>
+</html>
