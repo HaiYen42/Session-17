@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body id="nice-body">
+    <button id="btn">Click to add new player</button>
+        <ul id="list">
+            <li>Ronaldo</li>
+            <li>Messi</li>
+            <li>Neymar</li>
+        </ul>
+
+        <!-- <input id="my-input" type="text">
+        <ul id="list">
+            <li>Ronaldo</li>
+            <li>Messi</li>
+            <li>Neymar</li>
+        </ul> -->
+
+    <script>
+        //Cách 1: Dùng sự kiện click
+    //    function addLi(){
+    //     let ul=document.getElementById("list");
+    //     let li=document.createElement("li");
+    //     let name=prompt("Nhập tên cầu thủ")
+    //     li.appendChild(document.createTextNode(name))
+    //     ul.appendChild(li);
+    //    }
+    //    let input=document.getElementById("my-input");
+    //    btn.addEventListener('keypress', addLi);
+
+       // Cách 2: Dùng ô input
+    //    let myInput = document.getElementById('my-input');  
+    // function addInput(){
+    //     let ul=document.getElementById("list");
+    //     let li=document.createElement("li");
+    //     li.innerHTML=myInput.value;
+    //     ul.appendChild(li);
+    //     myInput.value=""
+        
+    // }
+
+    // myInput.addEventListener('keypress', function(data){
+    //     if(data.keyCode==13){
+    //         addInput();
+    //     }
+    // })
+//Cách 2(làm lại)
+        // let input=document.getElementById('my-input')
+        // function addLi(){
+        //     let ul=document.getElementById('list');
+        //     let li=document.createElement('li')
+        //     li.innerHTML=input.value;
+        //     ul.appendChild(li);
+        //     input.value=""
+
+        // }
+        // input.addEventListener('keypress', function(data){
+        //     if(data.keyCode==13){
+        //         addLi();
+        //     }
+        // })
+        function addLi(){
+            let ul = document.getElementById('list')
+            let li = document.createElement('li')
+            let name =prompt("Vui lòng nhập tên cầu thủ");
+            li.appendChild(document.createTextNode(name));
+            ul.appendChild(li);
+        }
+        let btn=document.getElementById('btn')
+        btn.addEventListener('keypress',addLi());
+        
+
+    </script>
+</body>
+</html>
