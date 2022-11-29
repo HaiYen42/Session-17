@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #timmer{
+            background-color: rgb(180, 159, 120);
+        }
+        #container{
+            text-align: center;
+        }
+        .clock{
+            border: 1px solid black;
+            padding: 40px;
+            border-radius: 8px;
+            font-size: x-large;
+            font-weight: bolder;
+        }
+        #time{
+            margin-top:70px;
+        }
+        #hour, #min{
+            background-color: blue;
+            color: white;
+        }
+        #second {
+            background-color:rgb(204, 50, 75);
+            color: white;
+        }
+        h1 {
+            color: white;
+        }
+    </style>
+</head>
+<body id="timmer">
+    <div id="container">
+        <h1> Thời gian bây giờ là:</h1>
+        <div id="time">
+            <span id="hour" class="clock"></span>
+            <span id="min" class="clock"> </span>
+            <span id="second" class="clock"></span>
+        </div>
+        <div id="musicLink"></div>
+        <!-- <img src="./hinh-nen-buom-hoa_052333712.jpg" alt=""> -->
+    </div>
+    <script>
+            function Clock(){
+                let today = new Date();
+                let time= today.getHours()+ ':'+ today.getMinutes()+ ':'+ today.getSeconds();
+                document.getElementById('hour').innerHTML=today.getHours();
+                document.getElementById('min').innerHTML=today.getMinutes();
+                document.getElementById('second').innerHTML=today.getSeconds();
+            }
+            // Tạo nhạc
+            let audio = document.createElement('audio');
+            let musicLink =document.getElementById('musicLink');
+            function music(){
+                musicLink.appendChild(audio);
+                audio.src= './TaiNhacHay.Biz - .mp3'
+                audio.autoplay = true;
+            }
+            function background(){
+                let bgr=document.querySelector('body');
+                bgr.background='./hinh-nen-buom-hoa_052333712.jpg'
+            }
+            setInterval(Clock,1000);
+            setInterval(music,10000);
+            setInterval(background,5000);
+    </script>
+</body>
+</html>
